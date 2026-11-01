@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Desk - Customer Support Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>SupportDesk</h2>
+        </div>
+
+        <nav class="navigation">
+            <a href="#" class="nav-link active">Dashboard</a>
+            <a href="#" class="nav-link">Tickets</a>
+            <a href="#" class="nav-link">Customers</a>
+            <a href="#" class="nav-link">Settings</a>
+        </nav>
+
+    </aside>
+    
+<!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <h1>Dashboard</h1>
+            <div class="user-profile">
+                <span>Welcome, Admin</span>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <section class="dashboard-content">
+            
+<!-- Statistics Cards -->
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <h3>Total Tickets</h3>
+                    <p class="stat-number" id="totalTickets">250</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Open Tickets</h3>
+                    <p class="stat-number" id="openTickets">80</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending Tickets</h3>
+                    <p class="stat-number" id="pendingTickets">45</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Resolved Tickets</h3>
+                    <p class="stat-number" id="resolvedTickets">125</p>
+                </div>
+
+            </div>
+            
+            
+<!-- Recent Tickets Section -->
+            <div class="tickets-section">
+
+                <div class="section-header">
+                    <h2>Recent Tickets</h2>
+                    <button class="add-ticket-btn" id="addTicketBtn">
+                    + Add New Ticket
+                    </button>
+                    
+                </div>
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by ticket ID, customer or subject..."
+                >
+                </div>
+                <div class="filter-container">
+                    <label for="statusFilter">Filter by Status:</label>
+
+                    <select id="statusFilter">
+                        <option value="all">All Tickets</option>
+                        <option value="open">Open</option>
+                        <option value="pending">Pending</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+
+               <!-- TABLE  -->
+
+            <div class="table-container">
+
+                <table class="tickets-table">
+                    <p id="noResultsMessage" class="no-results">
+                        No tickets found.
+                    </p>
+
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Customer</th>
+                            <th>Subject</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>#TK101</td>
+                            <td>Rahul Sharma</td>
+                            <td>Login issue</td>
+                            <td><span class="priority high">High</span></td>
+                            <td><span class="status open">Open</span></td>
+                            <td>
+                                <select class="status-select">
+                                    <option value="open" selected>Open</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="resolved">Resolved</option>
+                                </select>
+                                <button class="view-btn">View Details</button>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#TK102</td>
+                            <td>Priya Singh</td>
+                            <td>Payment failed</td>
+                            <td><span class="priority medium">Medium</span></td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <select class="status-select">
+                                    <option value="open">Open</option>
+                                    <option value="pending" selected>Pending</option>
+                                    <option value="resolved">Resolved</option>
+                                </select>
+                                <button class="view-btn">View Details</button>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#TK103</td>
+                            <td>Aman Verma</td>
+                            <td>Account recovery</td>
+                            <td><span class="priority low">Low</span></td>
+                            <td><span class="status resolved">Resolved</span></td>
+                            <td>
+                                <select class="status-select">
+                                    <option value="open" >Open</option>
+                                    <option value="pending" >Pending</option>
+                                    <option value="resolved" selected>Resolved</option>
+                                </select>
+                                <button class="view-btn">View Details</button>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>#TK104</td>
+                            <td>Neha Gupta</td>
+                            <td>Refund request</td>
+                            <td><span class="priority high">High</span></td>
+                            <td><span class="status open">Open</span></td>
+                            <td>
+                            <select class="status-select">
+                                <option value="open" selected>Open</option>
+                                <option value="pending">Pending</option>
+                                <option value="resolved">Resolved</option>
+                            </select>
+                            <button class="view-btn">View Details</button>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button> 
+
+                        </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            <</div>
+                <!-- Add Ticket Modal -->
+                <div class="modal" id="ticketModal">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h2 id="modalTitle">Create New Ticket</h2>
+                            <button class="close-btn" id="closeModal">
+                                &times;
+                            </button>
+                        </div>
+
+                        <form id="ticketForm">
+
+                            <label for="customerName">Customer Name</label>
+                            <input type="text" id="customerName"
+                                placeholder="Enter customer name" required>
+
+                            <label for="ticketSubject">Subject</label>
+                            <input type="text" id="ticketSubject"
+                                placeholder="Enter ticket subject" required>
+
+                            <label for="ticketPriority">Priority</label>
+                            <select id="ticketPriority" required>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+
+                            <label for="ticketDescription">Description</label>
+                            <textarea id="ticketDescription"
+                                placeholder="Describe the issue..." required></textarea>
+
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                Create Ticket
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+                <!-- Ticket Details Modal -->
+                <div class="modal" id="detailsModal">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h2>Ticket Details</h2>
+
+                            <button class="close-btn" id="closeDetailsModal">
+                                &times;
+                            </button>
+                        </div>
+
+                        <div class="ticket-details-content">
+
+                            <p><strong>Ticket ID:</strong> <span id="detailTicketId"></span></p>
+
+                            <p><strong>Customer:</strong> <span id="detailCustomer"></span></p>
+
+                            <p><strong>Subject:</strong> <span id="detailSubject"></span></p>
+
+                            <p><strong>Priority:</strong> <span id="detailPriority"></span></p>
+
+                            <p><strong>Status:</strong> <span id="detailStatus"></span></p>
+
+                            <p><strong>Description:</strong></p>
+                            <p id="detailDescription"></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <h2>Overview</h2>
+            <p>Welcome to your customer support dashboard.</p>
+        </section>
+
+    </main>
+
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
